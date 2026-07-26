@@ -51,6 +51,19 @@ async function auditWebsite(req, res) {
       data: result,
     });
   } catch (error) {
+    // Log the real upstream error for production debugging
+    console.error(
+      JSON.stringify({
+        timestamp: new Date().toISOString(),
+        level: "error",
+        requestId: req.requestId,
+        event: "audit_failed",
+        errorCode: error.code || null,
+        message: error.message,
+        upstreamStatus: error.response?.status || null,
+      })
+    );
+
     if (
       error.code === "ECONNABORTED" ||
       error.code === "ETIMEDOUT"
