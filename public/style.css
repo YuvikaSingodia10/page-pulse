@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: #080b12;
+  color: #f5f7fb;
+  min-height: 100vh;
+}
+
+.container {
+  width: min(900px, 90%);
+  margin: auto;
+  padding: 45px 0;
+}
+
+header {
+  margin-bottom: 70px;
+}
+
+.logo {
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: #67e8f9;
+}
+
+.tagline {
+  color: #7e899e;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 7vw, 65px);
+  line-height: 1;
+  max-width: 750px;
+}
+
+.hero > p {
+  color: #9ca7b9;
+  margin-top: 22px;
+  line-height: 1.6;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-top: 35px;
+}
+
+input {
+  flex: 1;
+  background: #111722;
+  border: 1px solid #283142;
+  border-radius: 9px;
+  padding: 17px;
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #67e8f9;
+}
+
+button {
+  border: 0;
+  background: #67e8f9;
+  color: #071016;
+  padding: 0 25px;
+  border-radius: 9px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+#message {
+  min-height: 25px;
+  margin-top: 15px;
+  color: #fca5a5;
+}
+
+.result {
+  margin-top: 45px;
+  padding: 25px;
+  background: #0e141e;
+  border: 1px solid #202a39;
+  border-radius: 14px;
+}
+
+.hidden {
+  display: none;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#cacheBadge {
+  font-size: 12px;
+  background: #172231;
+  padding: 7px 11px;
+  border-radius: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.card {
+  background: #141c28;
+  padding: 18px;
+  border-radius: 9px;
+}
+
+.card span,
+.details span {
+  display: block;
+  color: #8290a5;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.card strong {
+  font-size: 20px;
+}
+
+.details {
+  margin-top: 20px;
+}
+
+.details div {
+  border-top: 1px solid #202a39;
+  padding: 15px 0;
+}
+
+.details strong {
+  overflow-wrap: anywhere;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #68758a;
+  font-size: 13px;
+}
+
+footer a {
+  color: #8d9bb0;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #67e8f9;
+}
+
+@media (max-width: 650px) {
+  form {
+    flex-direction: column;
+  }
+
+  button {
+    padding: 16px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

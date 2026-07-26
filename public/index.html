@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Pulse | Website Auditor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="container">
+
+  <header>
+    <div class="logo">PAGE<span>PULSE</span></div>
+    <p class="tagline">Production Website Auditor</p>
+  </header>
+
+  <section class="hero">
+    <h1>Check the pulse of any webpage.</h1>
+
+    <p>
+      Run a fast HTTP health and metadata audit with
+      production-grade safeguards.
+    </p>
+
+    <form id="auditForm">
+      <input
+        id="urlInput"
+        type="url"
+        placeholder="https://example.com"
+        required
+      >
+      <button type="submit" id="auditButton">
+        Audit Page
+      </button>
+    </form>
+
+    <p id="message"></p>
+  </section>
+
+  <section id="result" class="result hidden">
+
+    <div class="result-header">
+      <h2>Audit Result</h2>
+      <span id="cacheBadge"></span>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <span>Status</span>
+        <strong id="statusCode">-</strong>
+      </div>
+
+      <div class="card">
+        <span>Response Time</span>
+        <strong id="responseTime">-</strong>
+      </div>
+
+      <div class="card">
+        <span>HTTPS</span>
+        <strong id="httpsStatus">-</strong>
+      </div>
+
+      <div class="card">
+        <span>Page Size</span>
+        <strong id="pageSize">-</strong>
+      </div>
+
+    </div>
+
+    <div class="details">
+
+      <div>
+        <span>Page title</span>
+        <strong id="pageTitle">-</strong>
+      </div>
+
+      <div>
+        <span>Content type</span>
+        <strong id="contentType">-</strong>
+      </div>
+
+      <div>
+        <span>Final URL</span>
+        <strong id="finalUrl">-</strong>
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    <a
+      href="https://digitalheroesco.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Built for Digital Heroes Training Task
+    </a>
+  </p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
