@@ -8,6 +8,16 @@ async function auditUrl(url) {
     timeout: config.requestTimeoutMs,
     maxRedirects: 5,
     responseType: "text",
+
+    // HTTP error statuses are still valid audit results.
+    validateStatus: () => true,
+
+    // Identify the auditor instead of using Axios' default user agent.
+    headers: {
+      "User-Agent":
+        "PagePulse/1.0 (+https://page-pulse-qdba.onrender.com)",
+      Accept: "text/html,application/xhtml+xml",
+    },
   });
 
   const responseTimeMs = Date.now() - startTime;
@@ -15,13 +25,12 @@ async function auditUrl(url) {
   const html =
     typeof response.data === "string" ? response.data : "";
 
-  // Extract page title
   const titleMatch = html.match(/<title[^>]*>(.*?)<\/title>/is);
+
   const title = titleMatch
     ? titleMatch[1].replace(/\s+/g, " ").trim()
     : null;
 
-  // Calculate approximate response size
   const pageSizeBytes = Buffer.byteLength(html, "utf8");
 
   return {
