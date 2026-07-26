@@ -186,7 +186,7 @@ I used AI as a development assistant to clarify production API concepts, review 
 
 ## Live Application
 
-Live URL will be added after deployment.
+Live URL : https://page-pulse-qdba.onrender.com/
 
 ---
 
