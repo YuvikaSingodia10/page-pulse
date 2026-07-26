@@ -7,6 +7,7 @@ const requestLogger = require("./middleware/requestLogger");
 
 const app = express();
 
+app.set("trust proxy", 1);
 app.use(requestLogger);
 app.use(express.json());
 
